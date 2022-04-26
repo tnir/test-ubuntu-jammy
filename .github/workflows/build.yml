@@ -4,5 +4,5 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - name: Run apt update on Ubuntu:jammy
-      run: docker run ubuntu@sha256:7599221e4e2e4eeb90ad282fc523139578f3dfea245b5049c4fee1b28776d2be apt update
+    - name: Run apt update on Ubuntu:jammy with woky/jammy-strace image
+      run: docker run woky/jammy-strace strace -f apt update
